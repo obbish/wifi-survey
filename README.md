@@ -41,3 +41,5 @@ Locations Logged:            2
 (Press Ctrl+C to stop)
 Enter new location and press Enter:
 ```
+
+Free to use, share and modify as per GNU GPLv3.0. 
