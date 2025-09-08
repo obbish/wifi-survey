@@ -16,7 +16,7 @@ Data Log Interval (approx):  2 s
 Live View Update Interval:   2 s
 
 --- RADIO ----------------------------------------------------
-SSID:                        StockholmInternt
+SSID:                        AllYourBase-5G
 BSSID:                       b8:11:4b:4f:8e:ab
 Channel:                     132
 RSSI:                        -69 dBm
