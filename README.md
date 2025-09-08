@@ -6,8 +6,7 @@ When you change location type where you are and press Enter. That way you can an
 
 #### Demo
 
-’’’
---- Live Wi-Fi Survey v14.4 ---
+```--- Live Wi-Fi Survey v14.4 ---
 
 --- GLOBAL ---------------------------------------------------
 Location:                    Office
@@ -39,5 +38,4 @@ Hops (Roams):                0
 Locations Logged:            2
 --------------------------------------------------------------
 (Press Ctrl+C to stop)
-Enter new location and press Enter:
-’’’
+Enter new location and press Enter:```
