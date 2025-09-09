@@ -9,10 +9,10 @@ from datetime import datetime, timezone, timedelta
 
 # --- Configuration ---
 SCRIPT_VERSION = "14.4"
-LOG_FILE = "/Users/ag78379/wifi_survey_log.jsonl"
+LOG_FILE = "/Users/user123/wifi_survey_log.jsonl"
 IPERF_PATH = "/usr/bin/iperf3-darwin"
-IPERF_SERVER = "10.66.22.27"
-LAN_PING_TARGET = "10.66.22.27"
+IPERF_SERVER = "YOUR IPERF3-SERVER"
+LAN_PING_TARGET = "SOME LOCAL HOST"
 WAN_PING_TARGET = "8.8.8.8"
 # The main loop now controls the display and logging rate
 LIVE_VIEW_UPDATE_INTERVAL_S = 2
