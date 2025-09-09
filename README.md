@@ -1,6 +1,8 @@
 ### For macOS
-Make sure you have the pip modules
-Make sure Python is allowed Location Services in System Settings
+* Make sure you have the pip modules at the top of the script
+* Make sure Python is allowed Location Services in System Settings
+* Make sure you have an iperf3 server on your network (or use an online one)
+* Modify first section of the script to your set up
 
 When you change location type where you are and press Enter. That way you can analyze wifi coverage.
 
