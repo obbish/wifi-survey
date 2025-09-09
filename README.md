@@ -41,10 +41,13 @@ Locations Logged:            2
 (Press Ctrl+C to stop)
 Enter new location and press Enter:
 ```
-#### Demo – The resultant log file is in JSONL format and looks like this:
+#### Demo – The resultant log file is in JSONL format and will like this:
 
 ```
 {"Epoch time": 1757339391, "Watch time": "2025-09-08T15:49:51+02:00", "script_version": "14.4", "bssid_changed": false, "location": "Reception area", "wifi_details": {"ssid": "AllYourBase-5G", "bssid": "b8:12:4b:4f:8f:ab", "rssi_dbm": -67, "noise_dbm": -92, "tx_rate_mbps": 206.0, "channel": 132, "phy_mode": "Other"}, "lan_ping": {"avg_ms": 11.006, "packet_loss_percent": 0.0, "packets_transmitted": 3, "packets_received": 3}, "wan_ping": {"avg_ms": 20.562, "packet_loss_percent": 33.3, "packets_transmitted": 3, "packets_received": 2}, "throughput": {"rx_mbps": 226.0, "retransmissions_rx": 53, "transfer_rx_mbytes": 54.0, "tx_mbps": 50.8, "retransmissions_tx": 110, "transfer_tx_mbytes": 13.5, "tx_error": "iPerf Tx timed out", "rx_error": "iPerf Rx timed out"}}
 ```
+
+It's recommended to use a JSON parser such as ```jq``` to query your log file directly or to convert to  human readable formats such as CSV.
+
 
 Free to use, share and modify as per GNU GPLv3.0. 
