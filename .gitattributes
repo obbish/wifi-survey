@@ -1,0 +1,8 @@
+# Exclude development-only files from GitHub ZIP archives and releases
+.github/ export-ignore
+.flake8 export-ignore
+.gitignore export-ignore
+.gitattributes export-ignore
+implementation_plan.md export-ignore
+walkthrough.md export-ignore
+task.md export-ignore

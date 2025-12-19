@@ -1,0 +1,26 @@
+[flake8]
+# Ignore F821 (undefined name) for macOS-specific classes that aren't available on Linux runners
+# These are classes from CoreWLAN, AppKit, etc.
+builtins =
+    NSObject,
+    CLLocationManager,
+    NSRunLoop,
+    NSDate,
+    CWWiFiClient,
+    CWNetwork,
+    CWInterface,
+    objc,
+    AppKit,
+    CoreWLAN,
+    Foundation,
+    PyObjC_loadBundle
+
+exclude =
+    .git,
+    __pycache__,
+    .venv,
+    build,
+    dist
+
+max-line-length = 127
+max-complexity = 10
