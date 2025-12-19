@@ -38,7 +38,7 @@ pip install -r requirements.txt
 ```
 
 ### 3. Configuration
-The tool creates a default config file in the script directory on its first run. To set your target `iperf_server` or to change program paths, run once then edit. Or you cna create it yourself as `config.json` after this template:
+The tool creates a default config file in the script directory on its first run. To set your target `iperf_server` or to change program paths, run once then edit. Or if you prefer to create it yourself as `config.json` you can use this template:
 
 *(Setting `"icmp_lan_server": "gateway",` will use your detected gateway as lan ping target)*
 
