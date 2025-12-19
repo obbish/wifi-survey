@@ -1,6 +1,6 @@
 # Definitive Wi-Fi Survey Tool v0.3.0
 
-A professional-grade active Wi-Fi survey tool for macOS. It logs Layer 2 Wi-Fi metrics (RSSI, Noise, TxRate, MCS, NSS) alongside active L3/L4 performance tests (Ping, iPerf3) correlated with location.
+A totally vibe coded, professional-grade, active Wi-Fi survey tool for macOS. It logs Layer 2 Wi-Fi metrics (RSSI, Noise, TxRate, MCS, NSS) alongside active L3/L4 performance tests (Ping, iPerf3) correlated with location.
 
 ## Key Features
 - **Real-time Live View**: Monitor Wi-Fi health and performance metrics instantly in your terminal.
