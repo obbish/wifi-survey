@@ -38,14 +38,16 @@ pip install -r requirements.txt
 ```
 
 ### 3. Configuration
-The tool creates a default `config.json` in the script directory on its first run. To set your target `iperf_server` or to change program paths, run once then edit `config.json`. Or create it yourself from this template:
+The tool creates a default config file in the script directory on its first run. To set your target `iperf_server` or to change program paths, run once then edit. Or you cna create it yourself as `config.json` after this template:
+
+*(Setting `"icmp_lan_server": "gateway",` will use your detected gateway as lan ping target)*
 
 ```JSON
 {
-    "script_version": "0.3.0",
+    "script_version": "0.3.1",
     "log_dir": "surveys",
-    "iperf_path": "/opt/homebrew/bin/iperf3",
-    "iperf_server": "127.0.0.1",
+    "iperf_path": "/path/to/iperf3",
+    "iperf_server": "YOUR_IPERF_SERVER",
     "icmp_lan_server": "gateway",
     "icmp_wan_server": "8.8.8.8",
     "log_interval_s": 2,
