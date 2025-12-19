@@ -1,0 +1,15 @@
+{
+    "script_version": "0.3.0",
+    "log_dir": "surveys",
+    "iperf_path": "/usr/bin/iperf3",
+    "iperf_server": "127.0.0.1",
+    "icmp_lan_server": "gateway",
+    "icmp_wan_server": "8.8.8.8",
+    "log_interval_s": 2,
+    "wifi_scan_interval_s": 1,
+    "icmp_interval_s": 1.5,
+    "icmp_packet_count": 4,
+    "iperf_interval_s": 15,
+    "iperf_duration_s": 2,
+    "export_logs": true
+}

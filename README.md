@@ -1,56 +1,83 @@
-### For macOS
-* Make sure you have the pip modules at the top of the script
-* Make sure Python is allowed Location Services in System Settings
-* Make sure you have an iperf3 server on your network (or use an online one)
-* Modify first section of the script to your set up
+# Definitive Wi-Fi Survey Tool v0.3.0
 
-When you change location type where you are and press Enter. That way you can analyze wifi coverage.
+A professional-grade active Wi-Fi survey tool for macOS. It logs Layer 2 Wi-Fi metrics (RSSI, Noise, TxRate, MCS, NSS) alongside active L3/L4 performance tests (Ping, iPerf3) correlated with location.
 
-#### Demo – When running the script it looks like this:
+## Key Features
+- **Real-time Live View**: Monitor Wi-Fi health and performance metrics instantly in your terminal.
+- **Roaming Tracking**: Automatically detects and logs BSSID transitions (roaming events).
+- **Dual Ping Targets**: Monitor both LAN (Gateway) and WAN (e.g., 8.8.8.8) latency simultaneously.
+- **iPerf3 Integration**: Measure actual throughput (Rx/Tx) as you move.
+- **Auto-Export**: Automatically converts JSONL logs to Excel (.xlsx) and CSV for easy analysis.
+- **macOS Native**: Uses `CoreWLAN` via PyObjC for deep system integration.
 
-```
---- Live Wi-Fi Survey v14.4 ---
+## Prerequisites
 
---- GLOBAL ---------------------------------------------------
-Location:                    Reception area
-Survey Start Time:           15:08:27
-Data Log Interval (approx):  2 s
-Live View Update Interval:   2 s
+- **macOS** (Tested on 26.2)
+- **Python 3.10+**
+- **iperf3**
 
---- RADIO ----------------------------------------------------
-SSID:                        AllYourBase-5G
-BSSID:                       b8:12:4b:4f:8f:ab
-Channel:                     132
-RSSI:                        -69 dBm
-Noise:                       -92 dBm
-
---- DATA -----------------------------------------------------
-Throughput (Rx/Tx):          176.0 / 106.0 Mbps
-Retransmits (Rx/Tx):         8 / 0
-Latency (LAN/WAN):           91.413ms (0.0%) / 92.466ms (0.0%)
-
---- SESSION TOTALS -------------------------------------------
-Run Time:                    0:09:26
-Total Data (Rx/Tx):          3304.60 / 2070.00 MB
-Avg. Throughput (Rx/Tx):     189.79 / 117.81 Mbps
-Avg. Ping (LAN/WAN):         15.72 / 17.29 ms
-Ping Pkts Sent (LAN/WAN):    219 / 219
-Ping Pkts Lost (LAN/WAN):    5 / 3
-Unique APs:                  1
-Hops (Roams):                0
-Locations Logged:            2
---------------------------------------------------------------
-(Press Ctrl+C to stop)
-Enter new location and press Enter:
-```
-#### Demo – The resultant log file is in JSONL format and will look like this:
-
-```
-{"Epoch time": 1757339391, "Watch time": "2025-09-08T15:49:51+02:00", "script_version": "14.4", "bssid_changed": false, "location": "Reception area", "wifi_details": {"ssid": "AllYourBase-5G", "bssid": "b8:12:4b:4f:8f:ab", "rssi_dbm": -67, "noise_dbm": -92, "tx_rate_mbps": 206.0, "channel": 132, "phy_mode": "Other"}, "lan_ping": {"avg_ms": 11.006, "packet_loss_percent": 0.0, "packets_transmitted": 3, "packets_received": 3}, "wan_ping": {"avg_ms": 20.562, "packet_loss_percent": 33.3, "packets_transmitted": 3, "packets_received": 2}, "throughput": {"rx_mbps": 226.0, "retransmissions_rx": 53, "transfer_rx_mbytes": 54.0, "tx_mbps": 50.8, "retransmissions_tx": 110, "transfer_tx_mbytes": 13.5, "tx_error": "iPerf Tx timed out", "rx_error": "iPerf Rx timed out"}}
+### 1. Install System Dependencies
+Install `iperf3` via Homebrew:
+```bash
+brew install iperf3
 ```
 
-It's recommended to use a JSON parser such as ```jq``` to analyze your log file. 
-Or use ```jq``` to convert to  human readable formats such as CSV. Then you can make pretty graphs and what not.
+## Setup
 
+### 1. Clone & Prepare Virtual Environment
+```bash
+git clone https://github.com/obbish/wifi-survey.git
+cd wifi-survey
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-Free to use, share and modify as per GNU GPLv3.0. 
+### 2. Install Python Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Configuration
+Copy the example configuration and edit it:
+```bash
+cp config.json.example config.json
+```
+
+Key configuration options in `config.json`:
+- `iperf_server`: IP address of your iPerf3 server.
+- `lan_icmp_target`: Set to `"gateway"` (default) to auto-detect your router, or specify a static IP.
+- `iperf_path`: The tool will try to find `iperf3` automatically, but you can override it here.
+
+### 4. Critical: Enable Location Services
+For the tool to see **SSID** and **BSSID**, you must grant Location permission to Python. We provide a helper script for this:
+
+```bash
+python3 request_location.py
+```
+Follow the system prompt to allow access.
+
+## Usage
+
+### Running a Survey
+```bash
+python3 wifi-survey.py
+```
+
+*By default, the tool logs data every 2 seconds.*
+
+1. **Enter Location**: Type your current location (e.g., "Reception") and press Enter.
+2. **Change Location**: Type a new location name whenever you move to a new spot.
+3. **Stop**: Press `Ctrl+C`. The tool will save the log and automatically attempt to export it to Excel/CSV.
+
+### Resulting Files
+- **Logs**: Saved in `surveys/survey_<START>-<END>.jsonl`.
+- **Exports**: If `export_logs` is enabled, `.xlsx` and `.csv` files are generated in the same directory.
+
+## Troubleshooting
+
+- **SSID/BSSID shows N/A**: Ensure Location Services are enabled for your Terminal/IDE and that you've run `request_location.py`.
+- **iPerf3 Errors**: Ensure an `iperf3 -s` server is reachable at the IP specified in `config.json`.
+- **PyObjC Errors**: Re-install dependencies using `pip install --force-reinstall -r requirements.txt`.
+
+## License
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.

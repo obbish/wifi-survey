@@ -1,0 +1,9 @@
+pyobjc-core==11.1
+pyobjc-framework-CoreWLAN==11.1
+pandas==2.3.3
+openpyxl==3.1.5
+numpy==2.0.2
+python-dateutil==2.9.0.post0
+pytz==2025.2
+six==1.17.0
+tzdata==2025.3
