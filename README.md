@@ -1,4 +1,4 @@
-# Definitive Wi-Fi Survey Tool v0.3.1
+# Free and open Wi-Fi Survey Tool for macOS – v0.3.1
 
 A totally vibe coded, professional-grade, active Wi-Fi survey tool for macOS. It logs Layer 2 Wi-Fi metrics alongside active L3/L4 performance tests (Ping, iPerf3) correlated with location.
 
