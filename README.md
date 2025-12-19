@@ -2,7 +2,7 @@
 
 A totally vibe coded, professional-grade, Wi-Fi survey and performance tool for macOS. Logs location, Wi-Fi detials, radio stats, and network performance (Ping, iPerf3).
 
-Saves all recorded data into JSON, CSV and XLSX, for your boss' convenience.
+Saves all recorded data into JSON, CSV and XLSX for all your viewing and troubleshooting needs.
 
 ## Key Features
 - **Real-time Live View**: Monitor Wi-Fi health and performance metrics instantly in your terminal.
