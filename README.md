@@ -38,9 +38,25 @@ pip install -r requirements.txt
 ```
 
 ### 3. Configuration
-The tool creates a default `config.json` in the script directory on its first run. Most users will not need to modify this file.
+The tool creates a default `config.json` in the script directory on its first run. To set your target `iperf_server` or to change program paths, run once then edit `config.json`. Or create it yourself from this template:
 
-If you need to change the `iperf_server` or paths, you can edit `config.json` after the first run.
+```JSON
+{
+    "script_version": "0.3.0",
+    "log_dir": "surveys",
+    "iperf_path": "/opt/homebrew/bin/iperf3",
+    "iperf_server": "127.0.0.1",
+    "icmp_lan_server": "gateway",
+    "icmp_wan_server": "8.8.8.8",
+    "log_interval_s": 2,
+    "wifi_scan_interval_s": 1,
+    "icmp_interval_s": 1.5,
+    "icmp_packet_count": 4,
+    "iperf_interval_s": 15,
+    "iperf_duration_s": 2,
+    "export_logs": true
+}
+```
 
 ### 4. Critical: Enable Location Services
 For the tool to see **SSID** and **BSSID**, you must grant Location permission to Python. We provide a helper script for this:
