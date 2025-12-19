@@ -10,6 +10,7 @@ Saves all recorded data into JSON, CSV and XLSX for all your viewing and trouble
 - **Dual Ping Targets**: Monitor latency to two hosts simultaneously (LAN+WAN eg.)
 - **iPerf3 Integration**: Measure actual throughput via iperf as you move.
 - **macOS Native**: Uses `CoreWLAN` via PyObjC, no sudo to run.
+- **Good log**: Data neatly organized and easily analyzed using your favorite parser.  
 
 ## Prerequisites
 
