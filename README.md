@@ -7,10 +7,9 @@ Saves all recorded data into JSON, CSV and XLSX for all your viewing and trouble
 ## Key Features
 - **Real-time Live View**: Monitor Wi-Fi health and performance metrics instantly in your terminal.
 - **Roaming Tracking**: Automatically detects and logs BSSID transitions (roaming events).
-- **Dual Ping Targets**: Monitor both LAN (Gateway) and WAN (e.g., 8.8.8.8) latency simultaneously.
-- **iPerf3 Integration**: Measure actual throughput (Rx/Tx) as you move.
-- **Auto-Export**: Automatically converts JSONL logs to Excel (.xlsx) and CSV for easy analysis.
-- **macOS Native**: Uses `CoreWLAN` via PyObjC for deep system integration.
+- **Dual Ping Targets**: Monitor latency to two hosts simultaneously (LAN+WAN eg.)
+- **iPerf3 Integration**: Measure actual throughput via iperf as you move.
+- **macOS Native**: Uses `CoreWLAN` via PyObjC, no sudo to run.
 
 ## Prerequisites
 
