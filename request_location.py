@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import objc
+from objc import NSObject
+
 
 import sys
 import time
@@ -58,7 +60,7 @@ def main():
     print("--- macOS Location Services Request ---")
     
     delegate = LocationDelegate.alloc().init()
-    manager = CLLocationManager.alloc().init()
+    manager = CLLocationManager.alloc().init()  # noqa: F821
     manager.setDelegate_(delegate)
     
     print("Requesting Authorization... (Look for a popup!)")
@@ -69,10 +71,10 @@ def main():
     
     try:
         # Run loop driving
-        run_loop = NSRunLoop.currentRunLoop()
+        run_loop = NSRunLoop.currentRunLoop()  # noqa: F821
         while time.time() - start_time < 60:
             # Run for small slices
-            run_loop.runUntilDate_(NSDate.dateWithTimeIntervalSinceNow_(0.1))
+            run_loop.runUntilDate_(NSDate.dateWithTimeIntervalSinceNow_(0.1))  # noqa: F821
     except Exception as e:
         print(f"Loop error: {e}")
 

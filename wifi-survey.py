@@ -95,7 +95,6 @@ latest_data = {
 
 # --- Workers ---
 def location_input_thread():
-    global latest_data
     try:
         new_location = input("Enter starting location: ")
         with data_lock: latest_data["location"] = new_location
@@ -118,7 +117,7 @@ def wifi_worker():
     
     while True:
         try:
-            client = CWWiFiClient.sharedWiFiClient()
+            client = CWWiFiClient.sharedWiFiClient()  # noqa: F821
             interface = client.interface()
             
             if interface:
