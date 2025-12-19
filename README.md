@@ -61,14 +61,14 @@ The tool creates a default config file in the script directory on its first run.
 ```
 
 ### 4. Critical: Enable Location Services
-For the tool to see **SSID** and **BSSID**, you must grant Location permission to Python. We provide a helper script for this:
+For the tool to see **SSID** and **BSSID**, you must grant Location permission to Python. A helper script is provided for this:
 
 ```bash
 python3 request_location.py
 ```
-Follow the system prompt to allow access.
+Follow the system prompt to allow python access.
 
-## Usage
+## Main script usage
 
 ### Running a Survey
 ```bash
