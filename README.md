@@ -1,4 +1,4 @@
-# Definitive Wi-Fi Survey Tool v0.3.0
+# Definitive Wi-Fi Survey Tool v0.3.1
 
 A totally vibe coded, professional-grade, active Wi-Fi survey tool for macOS. It logs Layer 2 Wi-Fi metrics alongside active L3/L4 performance tests (Ping, iPerf3) correlated with location.
 
@@ -38,15 +38,9 @@ pip install -r requirements.txt
 ```
 
 ### 3. Configuration
-Copy the example configuration and edit it:
-```bash
-cp config.json.example config.json
-```
+The tool creates a default `config.json` in the script directory on its first run. Most users will not need to modify this file.
 
-Key configuration options in `config.json`:
-- `iperf_server`: IP address of your iPerf3 server.
-- `lan_icmp_target`: Set to `"gateway"` (default) to auto-detect your router, or specify a static IP.
-- `iperf_path`: The tool will try to find `iperf3` automatically, but you can override it here.
+If you need to change the `iperf_server` or paths, you can edit `config.json` after the first run.
 
 ### 4. Critical: Enable Location Services
 For the tool to see **SSID** and **BSSID**, you must grant Location permission to Python. We provide a helper script for this:

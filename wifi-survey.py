@@ -16,7 +16,7 @@ CONFIG_FILE = os.path.join(SCRIPT_DIR, CONFIG_FILENAME)
 
 # Default Config (Grouped: Meta, Paths, Targets, Timers, Features)
 DEFAULT_CONFIG = {
-    "script_version": "0.3.0",
+    "script_version": "0.3.1",
     
     "log_dir": "surveys",
     "iperf_path": shutil.which("iperf3") or "/usr/bin/iperf3",
